@@ -81,6 +81,14 @@ const _setDuration = () =>
     onDurationReady(s);
   });
 
+const changeQuality = (opts) => {
+  player.setPlaybackQuality(opts)
+}
+
+const changeSpeed = (opts) => {
+  player.setPlaybackRate(opts)
+}
+
 // send current time every 1000 ms
 const _setCurrentTime = () => {
   setInterval(() => {
@@ -88,9 +96,12 @@ const _setCurrentTime = () => {
   }, 500);
 };
 
+
 // invoke functions
 
 invoke.define("createPlayer", createPlayer);
 invoke.define("playVideo", playVideo);
 invoke.define("pauseVideo", pauseVideo);
 invoke.define("seekTo", seekTo);
+invoke.define("changeQuality", changeQuality);
+invoke.define("changeSpeed", changeSpeed);
